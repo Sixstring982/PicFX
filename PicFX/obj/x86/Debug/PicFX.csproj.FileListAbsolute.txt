@@ -1,0 +1,10 @@
+c:\users\tsmall\documents\visual studio 2010\Projects\PicFX\PicFX\bin\Debug\PicFX.exe
+c:\users\tsmall\documents\visual studio 2010\Projects\PicFX\PicFX\bin\Debug\PicFX.pdb
+c:\users\tsmall\documents\visual studio 2010\Projects\PicFX\PicFX\obj\x86\Debug\ResolveAssemblyReference.cache
+c:\users\tsmall\documents\visual studio 2010\Projects\PicFX\PicFX\obj\x86\Debug\PicFX.exe
+c:\users\tsmall\documents\visual studio 2010\Projects\PicFX\PicFX\obj\x86\Debug\PicFX.pdb
+C:\Users\Six\git\PicFX\PicFX\obj\x86\Debug\PicFX.exe
+C:\Users\Six\git\PicFX\PicFX\obj\x86\Debug\PicFX.pdb
+C:\Users\Six\git\PicFX\PicFX\bin\Debug\PicFX.exe
+C:\Users\Six\git\PicFX\PicFX\bin\Debug\PicFX.pdb
+C:\Users\Six\git\PicFX\PicFX\obj\x86\Debug\ResolveAssemblyReference.cache
