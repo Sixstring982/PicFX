@@ -88,7 +88,7 @@ C# Picture Glitcher
 		save [filename]
 		Saves the edited image at the path specified.
 		
-		uload [filename]
+		unload
 		Unloads the file from PicFx. Useful if you want to open the
 		image that you are currently editing elsewhere.
 		
