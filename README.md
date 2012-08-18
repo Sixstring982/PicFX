@@ -138,8 +138,8 @@ C# Picture Glitcher
 		Rotates each color channel to another channel. I.e., 
 		R = B, B = G, G = R
 		
-		pane
-		Selects strips of 8 pixels wide, and reverses them. Does this
+		pane [int size]
+		Selects strips of size pixels wide, and reverses them. Does this
 		for the whole picture.
 		
 		csmear

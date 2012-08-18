@@ -627,7 +627,7 @@ namespace PicFX
             loadedBMP.UnlockBits(bmpData);
         }
 
-        public void Pane()
+        public void Pane(int size)
         {
             if (loadedBMP == null)
             {
@@ -638,16 +638,16 @@ namespace PicFX
             BitmapData bmpData = loadedBMP.LockBits(new Rectangle(0, 0, loadedBMP.Width, loadedBMP.Height),
                 ImageLockMode.ReadWrite, PixelFormat.Format32bppArgb);
 
-            Color[] cs = new Color[8];
-            for (int x = 0; x < bmpData.Width; x += 8)
+            Color[] cs = new Color[size];
+            for (int x = 0; x < bmpData.Width; x += size)
             {
                 for (int y = 0; y < bmpData.Height; y++)
                 {
-                    if (x + 7 >= bmpData.Width) break;
-                    for (int i = 0; i < 8; i++)
+                    if (x + size - 1 >= bmpData.Width) break;
+                    for (int i = 0; i < size; i++)
                         cs[i] = FastGraphics.GetPixel(bmpData, x + i, y);
-                    for (int i = 0; i < 8; i++)
-                        FastGraphics.SetPixel(bmpData, x + i, y, cs[7 - i]);
+                    for (int i = 0; i < size; i++)
+                        FastGraphics.SetPixel(bmpData, x + i, y, cs[size - 1 - i]);
                 }
             }
 
@@ -677,7 +677,7 @@ namespace PicFX
             DeRes(20);
             ReChannel(Channel.R);
             DeRes(10);
-            Pane();
+            Pane(8);
             ReChannel(Channel.G);
         }
 

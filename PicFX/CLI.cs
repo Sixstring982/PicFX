@@ -124,7 +124,16 @@ namespace PicFX
                         modder.CRotate();
                         break;
                     case "pane":
-                        modder.Pane();
+                        if (commands.Length > 1)
+                        {
+                            int tryint = 0;
+                            if (Int32.TryParse(commands[1], out tryint))
+                                modder.Pane(tryint);
+                            else
+                                ConX.ErrorWrite("Pane size argument is invalid.");
+                        }
+                        else
+                            ConX.ErrorWrite("Pane requires an int argument (pane size)");
                         break;
                     case "unload":
                         modder.Unload();
