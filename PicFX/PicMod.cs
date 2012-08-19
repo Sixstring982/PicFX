@@ -209,53 +209,6 @@ namespace PicFX
             loadedBMP.UnlockBits(bmpData);
         }
 
-        public void RTile()
-        {
-            if (loadedBMP == null)
-            {
-                ConX.ErrorWrite("No picture has been loaded yet.");
-                return;
-            }
-            ConX.InfoWrite("Beginning RTile...");
-            Bitmap newBMP = new Bitmap(loadedBMP);
-            BitmapData bmpData = loadedBMP.LockBits(new Rectangle(0, 0, loadedBMP.Width, loadedBMP.Height),
-                ImageLockMode.ReadWrite, PixelFormat.Format32bppArgb);
-            BitmapData newData = newBMP.LockBits(new Rectangle(0, 0, loadedBMP.Width, loadedBMP.Height),
-                ImageLockMode.ReadWrite, PixelFormat.Format32bppArgb);
-
-            Rectangle srcRect = new Rectangle(0, 0, tileSize, tileSize);
-            Rectangle destRect = new Rectangle(0, 0, tileSize, tileSize);
-            int xDims = bmpData.Width / tileSize;
-            int yDims = bmpData.Height / tileSize;
-
-            Color readC;
-            for (int x = 0; x < bmpData.Width; x += tileSize)
-            {
-                for (int y = 0; y < bmpData.Height; y += tileSize)
-                {
-                    srcRect.X = x;
-                    srcRect.Y = y;
-
-                    destRect.X = x;
-                    destRect.Y = bmpData.Height - y - tileSize;
-
-                    for (int i = 0; i < tileSize; i++)
-                    {
-                        for (int j = 0; j < tileSize; j++)
-                        {
-                            readC = FastGraphics.GetPixel(bmpData, srcRect.X + i, srcRect.X + j);
-                            FastGraphics.SetPixel(newData, destRect.X + i, destRect.Y + j, readC);
-                        }
-                    }
-                }
-            }
-
-            ConX.InfoWrite("RTile Complete.");
-            loadedBMP.UnlockBits(bmpData);
-            newBMP.UnlockBits(newData);
-            loadedBMP = newBMP;
-        }
-
         public void Multiply(double multiplier, Channel channel)
         {
             if (loadedBMP == null)

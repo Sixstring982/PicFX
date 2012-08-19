@@ -141,9 +141,6 @@ namespace PicFX
                     case "csmear":
                         modder.CSmear();
                         break;
-                    case "rtile":
-                        modder.RTile();
-                        break;
                     case "for":
                         if (commands.Length > 2)
                         {

@@ -146,11 +146,6 @@ C# Picture Glitcher
 		Performs a smattering of calls to the editing library. Makes
 		your image look pretty fascinating most of the time
 		
-		rtile
-		I don't remember where I was going with this one. It looks
-		broken, but I know someone will find something cool to use it for.
-		Looks like it smears the top 8 rows of the picture down the rest of it.
-		
 		flip [v | h]
 		Flips the picture, either horizontally or vertically based
 		on its arguments.
