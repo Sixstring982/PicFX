@@ -92,6 +92,14 @@ C# Picture Glitcher
 		Unloads the file from PicFx. Useful if you want to open the
 		image that you are currently editing elsewhere.
 		
+		show
+		Shows the picture in a new form, allowing you to view your changes.
+		
+		cam
+		Shows the picture in a cam window, with a camMap window nearby.
+		When clicked, the camMap window will allow you to browse around
+		the loaded image.
+		
 	II. Control
 		PicFx has commands which edit the flow of editing.
 		
@@ -176,6 +184,15 @@ C# Picture Glitcher
 		If a pixel's channel value meets the threshold, it is set to
 		0.
 		
+		
+5. Bugs
+	 So far, the following bugs are evident upong using PicFX.
+	 
+	 I. When using cam on an image longer than 512px in one dimension,
+	    The bottom seems to cut off. If the user does not type show
+		after camming an image such as this, the image tends to
+		get corrupted pretty badly.
+	    
 		
 Happy glitching!
 

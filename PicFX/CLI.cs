@@ -55,7 +55,9 @@ namespace PicFX
                         break;
                     case "load":
                         if (commands.Length > 1)
+                        {
                             modder.LoadFromFilename(browser.GetPath() + "\\" + commands[1]);
+                        }
                         else
                             ConX.ErrorWrite("No filename specified.");
                         break;
@@ -371,6 +373,18 @@ namespace PicFX
                             ConX.ErrorWrite("No image loaded. Load one first.");
                         else
                             new ViewLoader(modder);
+                        break;
+                    case "cam":
+                        if (modder.loadedBMP == null)
+                            ConX.ErrorWrite("No image loaded. Load one first.");
+                        else
+                        {
+                            if (modder.loadedBMP.Width < 512 &&
+                                modder.loadedBMP.Height < 512)
+                                new ViewLoader(modder);
+                            else
+                                new CamMapForm(modder);
+                        }
                         break;
                     case "exit":
                     case "quit":

@@ -40,6 +40,12 @@
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CameraForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CamMapForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="CLI.cs" />
     <Compile Include="ConX.cs" />
     <Compile Include="FastGraphics.cs" />

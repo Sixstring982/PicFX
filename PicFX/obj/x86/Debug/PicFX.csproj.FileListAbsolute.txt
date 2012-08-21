@@ -8,3 +8,8 @@ C:\Users\Six\git\PicFX\PicFX\obj\x86\Debug\PicFX.pdb
 C:\Users\Six\git\PicFX\PicFX\bin\Debug\PicFX.exe
 C:\Users\Six\git\PicFX\PicFX\bin\Debug\PicFX.pdb
 C:\Users\Six\git\PicFX\PicFX\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\tsmall\git\PicFX\PicFX\obj\x86\Debug\PicFX.exe
+C:\Users\tsmall\git\PicFX\PicFX\obj\x86\Debug\PicFX.pdb
+C:\Users\tsmall\git\PicFX\PicFX\bin\Debug\PicFX.exe
+C:\Users\tsmall\git\PicFX\PicFX\bin\Debug\PicFX.pdb
+C:\Users\tsmall\git\PicFX\PicFX\obj\x86\Debug\ResolveAssemblyReference.cache
