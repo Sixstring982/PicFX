@@ -386,6 +386,40 @@ namespace PicFX
                                 new CamMapForm(modder);
                         }
                         break;
+                    case "ushift":
+                    case "lshift":
+                    case "rshift":
+                    case "dshift":
+                        if (commands.Length == 3)
+                        {
+                            Direction dir = Direction.Up;
+                            Channel channel = Channel.All;
+                            int tryDist = 0;
+                            switch (commands[0][0])
+                            {
+                                case 'd': dir = Direction.Down; break;
+                                case 'l': dir = Direction.Left; break;
+                                case 'r': dir = Direction.Right; break;
+                            }
+                            switch (commands[1][0])
+                            {
+                                case 'r': channel = Channel.R; break;
+                                case 'g': channel = Channel.G; break;
+                                case 'b': channel = Channel.B; break;
+                                case 'a': channel = Channel.All; break;
+                                default: ConX.ErrorWrite("First argument must be [r|g|b|all]"); return true;
+                            }
+                            if (Int32.TryParse(commands[2], out tryDist))
+                                modder.Shift(dir, channel, tryDist);
+                            else
+                                ConX.ErrorWrite("Second argument must be an integer.");
+                            
+                        }
+                        else
+                            ConX.ErrorWrite("shift needs two arguments: channel and distance.");
+                        
+
+                        break;
                     case "exit":
                     case "quit":
                         return false;

@@ -13,7 +13,7 @@ namespace PicFX
         {
             if (g.PixelFormat != PixelFormat.Format32bppArgb)
                 throw new FormatException("Image not in the correct pixel format!");
-            if (x < 0 || y < 0 || x > g.Width - 1 || y > g.Width - 1) return;
+            if (x < 0 || y < 0 || x > g.Width - 1 || y > g.Height - 1) return;
             if (c.A > 10)
             {
                 unsafe
@@ -42,7 +42,7 @@ namespace PicFX
         public static Color GetPixel(BitmapData g, int x, int y)
         {
             int argb;
-            if (x > g.Width || y > g.Height || x < 0 || y < 0) return Color.Black;
+            if (x >= g.Width || y >= g.Height || x < 0 || y < 0) return Color.Black;
             unsafe
             {
                 byte* start = (byte*)g.Scan0;

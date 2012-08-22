@@ -12,7 +12,8 @@ namespace PicFX
     {
         R,
         G,
-        B
+        B,
+        All
     }
 
     class PicMod
@@ -45,6 +46,45 @@ namespace PicFX
                 newPath[b] = tmp;
             }
             return newPath.ToArray();
+        }
+
+        public void Shift(Direction dir, Channel c, int distance)
+        {
+            if (loadedBMP == null)
+            {
+                ConX.ErrorWrite("No picture has been loaded yet.");
+                return;
+            }
+            ConX.InfoWrite("Beginning Shift...");
+            Bitmap oldBMP = new Bitmap(loadedBMP);
+            BitmapData oldD = FastGraphics.WholeLock(oldBMP);
+            BitmapData bmpD = FastGraphics.WholeLock(loadedBMP);
+
+            int startX = dir == Direction.Right ? distance : (dir == Direction.Left ? -distance : 0);
+            int endX = startX + loadedBMP.Width;
+            int startY = dir == Direction.Down ? distance : (dir == Direction.Up ? -distance : 0);
+            int endY = startY + loadedBMP.Height;
+
+            Color newC, oldC;
+            for (int x = startX; x < endX; x++)
+            {
+                for (int y = startY; y < endY; y++)
+                {
+                    newC = FastGraphics.GetPixel(bmpD, x, y);
+                    oldC = FastGraphics.GetPixel(oldD, x - startX, y - startY);
+                    switch(c)
+                    {
+                        case Channel.B:   newC = Color.FromArgb(newC.A, newC.R, oldC.B, newC.G); break;
+                        case Channel.G:   newC = Color.FromArgb(newC.A, newC.R, newC.B, oldC.G); break;
+                        case Channel.R:   newC = Color.FromArgb(newC.A, oldC.R, newC.B, newC.G); break;
+                        case Channel.All: newC = Color.FromArgb(newC.A, oldC.R, oldC.B, oldC.G); break;
+                    }
+                    FastGraphics.SetPixel(bmpD, x, y, newC);
+                }
+            }
+
+            ConX.InfoWrite("Shift Complete.");
+            loadedBMP.UnlockBits(bmpD);
         }
 
         public void CThreshold(byte threshold, Channel c)
@@ -366,6 +406,8 @@ namespace PicFX
                             FastGraphics.SetPixel(bmpData, x, y, Color.FromArgb(readColor.A, readColor.R, readColor.G, 0));
                             break;
                     }
+                    if (y > bmpData.Height - 10)
+                        y = y;
                 }
             }
 

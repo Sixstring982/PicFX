@@ -48,6 +48,7 @@
     </Compile>
     <Compile Include="CLI.cs" />
     <Compile Include="ConX.cs" />
+    <Compile Include="Direction.cs" />
     <Compile Include="FastGraphics.cs" />
     <Compile Include="FileBrowser.cs" />
     <Compile Include="PicMod.cs" />
