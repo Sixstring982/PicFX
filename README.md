@@ -184,14 +184,10 @@ C# Picture Glitcher
 		If a pixel's channel value meets the threshold, it is set to
 		0.
 		
-		
-5. Bugs
-	 So far, the following bugs are evident upong using PicFX.
-	 
-	 I. When using cam on an image longer than 512px in one dimension,
-	    The bottom seems to cut off. If the user does not type show
-		after camming an image such as this, the image tends to
-		get corrupted pretty badly.
+		Shift
+		[rshift | lshift | ushift | dshift] [r | g | b | all] [int distance]
+		Shifts the specified channel in the calling direction by
+		distance pixels.
 	    
 		
 Happy glitching!
