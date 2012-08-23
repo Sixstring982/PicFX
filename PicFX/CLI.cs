@@ -420,12 +420,38 @@ namespace PicFX
                         
 
                         break;
+                    case "rscript":
+                        if (commands.Length == 2)
+                        {
+                            RunScript(commands[1], browser, modder);
+                        }
+                        else
+                            ConX.ErrorWrite("Must only specify a script file to run.");
+                        break;
                     case "exit":
                     case "quit":
                         return false;
                 }
             }
             return true;
+        }
+
+        private void RunScript(string filename, FileBrowser browser, PicMod modder)
+        {
+            filename = browser.GetPath() + "\\" + filename;
+            if (File.Exists(filename))
+            {
+                ConX.InfoWrite("Running script " + filename);
+                StreamReader reader = new StreamReader(filename);
+
+                while (!reader.EndOfStream)
+                    HandleCommand(reader.ReadLine(), browser, modder);
+
+                reader.Close();
+                ConX.InfoWrite("Script complete.");
+            }
+            else
+                ConX.ErrorWrite("Script file does not exist.");
         }
 
         private void ShowSplash()

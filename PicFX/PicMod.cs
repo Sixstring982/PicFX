@@ -406,8 +406,6 @@ namespace PicFX
                             FastGraphics.SetPixel(bmpData, x, y, Color.FromArgb(readColor.A, readColor.R, readColor.G, 0));
                             break;
                     }
-                    if (y > bmpData.Height - 10)
-                        y = y;
                 }
             }
 

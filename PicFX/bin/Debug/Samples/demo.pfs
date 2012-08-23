@@ -1,0 +1,11 @@
+cthreshold 128 r
+dechannel g
+compress 6
+deres 5
+flip v
+pane 8
+flip v
+pane 8
+rechannel g
+compress 4
+deres 2

@@ -52,9 +52,9 @@ C# Picture Glitcher
 	Looking pretty badass! Here's a fun trick that yeilds some cool results:
 	
 		flip v
-		pane
+		pane 8
 		flip v
-		pane
+		pane 8
 		
 	Already looks a little glitchy if you ask me! Now we should add the green
 	layer back to the photo:
