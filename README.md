@@ -199,7 +199,7 @@ C# Picture Glitcher
 	run.
 	
 	A script consists of a series of any of the commands listed in section
-	4. If you wish to see an example, there is a sample script called
+	four. If you wish to see an example, there is a sample script called
 	demo.pfs located in the samples folder.
 	    
 		
