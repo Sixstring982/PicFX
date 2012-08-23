@@ -106,6 +106,9 @@ C# Picture Glitcher
 		for [int loopCount] [command]
 		Performs the command loopCount times, then stops.
 		
+		rscript [filename]
+		Runs a script, saved at filename. See section 5 for details.
+		
 		exit
 		quit
 		Closes the program. Don't forget to save!
@@ -188,6 +191,16 @@ C# Picture Glitcher
 		[rshift | lshift | ushift | dshift] [r | g | b | all] [int distance]
 		Shifts the specified channel in the calling direction by
 		distance pixels.
+		
+5. Scripting
+
+	PicFX supports some basic scripting. All you must do is use the rscript
+	command in conjunction with the filename of the script that you wish to
+	run.
+	
+	A script consists of a series of any of the commands listed in section
+	4. If you wish to see an example, there is a sample script called
+	demo.pfs located in the samples folder.
 	    
 		
 Happy glitching!
